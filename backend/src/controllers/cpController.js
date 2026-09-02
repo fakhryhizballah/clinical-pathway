@@ -6,7 +6,8 @@ import {
   updatePatientInfo,
   updateStatus,
   addVariance,
-  deleteVariance
+  deleteVariance,
+  getTemplates
 } from '../services/cpService.js';
 const host = process.env.HOST || 'http://localhost:3000';
 export async function findOrCreateRecord(req, res) {
@@ -123,4 +124,14 @@ export async function removeVariance(req, res) {
   } catch (error) {
     res.status(error.status || 500).json({ ok: false, message: error.message });
   }
+}
+
+export async function getListTemplates(req, res) {
+  try {
+    const data = await getTemplates();
+    res.json({ ok: true, data });
+  } catch (error) {
+    res.status(error.status || 500).json({ ok: false, message: error.message });
+  }
+
 }

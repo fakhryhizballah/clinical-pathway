@@ -29,6 +29,10 @@ function normalizeNumber(value) {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
+export async function getTemplates() {
+  return await CpTemplate.find({ status: 'active' }, { kode_template_cp: 1, nama_template: 1, _id: 0 });
+
+}
 export async function getCreateRecord({ no_reg, no_rm, kode_template_cp }) {
   const existing = await CpRecord.findOne({ no_reg, no_rm, kode_template_cp });
   if (existing) {
