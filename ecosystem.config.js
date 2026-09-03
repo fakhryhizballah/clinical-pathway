@@ -5,7 +5,7 @@ module.exports = {
             script: "npm",
             args: "--workspace backend run start", // Sesuaikan dengan script start di workspace backend Anda
             env: {
-                NODE_ENV: "production",
+                // NODE_ENV: "production",
             },
         },
         {
@@ -13,8 +13,8 @@ module.exports = {
             script: "npm",
             args: "--workspace frontend run start", // Atau sesuaikan jika frontend menggunakan 'next start' / 'vite preview'
             env: {
-                NODE_ENV: "production",
-                PORT: 3000, // Sesuaikan port frontend jika diperlukan
+                // NODE_ENV: "production",
+                // PORT: 3000, // Sesuaikan port frontend jika diperlukan
             },
         },
     ],
