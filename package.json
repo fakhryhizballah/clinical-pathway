@@ -10,7 +10,11 @@
     "dev:backend": "npm --workspace backend run dev",
     "dev:frontend": "npm --workspace frontend run dev",
     "build": "npm --workspace frontend run build && npm --workspace backend run start",
-    "start": "npm --workspace backend run start"
+    "start": "npm --workspace backend run start",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 delete all",
+    "pm2:logs": "pm2 logs",
+    "pm2:restart": "pm2 restart all"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
